@@ -13,4 +13,52 @@
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Components\" />
+    <Folder Include="Components\Extension\" />
+    <Folder Include="Resources\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\Icons\home.png" />
+    <None Remove="Resources\Icons\home.svg" />
+    <None Remove="Resources\Icons\discovery.png" />
+    <None Remove="Resources\Icons\discovery.svg" />
+    <None Remove="Resources\Icons\me.png" />
+    <None Remove="Resources\Icons\me.svg" />
+    <None Remove="Resources\Icons\notifications.png" />
+    <None Remove="Resources\Icons\notifications.svg" />
+    <None Remove="Resources\Icons\tiktok-vn.png" />
+    <None Remove="Resources\Icons\tiktok-vn.svg" />
+    <None Remove="Resources\Images\gai-xinh.png" />
+    <None Remove="Resources\Icons\share.png" />
+    <None Remove="Resources\Icons\share.svg" />
+    <None Remove="Resources\Icons\comment.png" />
+    <None Remove="Resources\Icons\heart.png" />
+    <None Remove="Resources\Icons\comment.svg" />
+    <None Remove="Resources\Icons\heart.svg" />
+    <None Remove="Resources\Images\profile.png" />
+    <None Remove="Resources\Images\singerProfile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\home.png" />
+    <EmbeddedResource Include="Resources\Icons\home.svg" />
+    <EmbeddedResource Include="Resources\Icons\discover.png" />
+    <EmbeddedResource Include="Resources\Icons\discover.svg" />
+    <EmbeddedResource Include="Resources\Icons\me.png" />
+    <EmbeddedResource Include="Resources\Icons\me.svg" />
+    <EmbeddedResource Include="Resources\Icons\notifications.png" />
+    <EmbeddedResource Include="Resources\Icons\notifications.svg" />
+    <EmbeddedResource Include="Resources\Icons\tiktok-vn.png" />
+    <EmbeddedResource Include="Resources\Icons\tiktok-vn.svg" />
+    <EmbeddedResource Include="Resources\Images\gai-xinh.png" />
+    <EmbeddedResource Include="Resources\Icons\share.png" />
+    <EmbeddedResource Include="Resources\Icons\share.svg" />
+    <EmbeddedResource Include="Resources\Icons\comment.png" />
+    <EmbeddedResource Include="Resources\Icons\heart.png" />
+    <EmbeddedResource Include="Resources\Icons\comment.svg" />
+    <EmbeddedResource Include="Resources\Icons\heart.svg" />
+    <EmbeddedResource Include="Resources\Images\profile.png" />
+    <EmbeddedResource Include="Resources\Images\singerProfile.png" />
+  </ItemGroup>
 </Project>

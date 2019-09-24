@@ -98,9 +98,9 @@
     <Folder Include="Resources\drawable-xxxhdpi\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mobile_FrontEnd\Mobile_FrontEnd.csproj">
-      <Project>{F299ECDC-743D-4A6C-8BB5-ACCC530482A3}</Project>
-      <Name>Mobile_FrontEnd</Name>
+    <ProjectReference Include="..\Mobile-FrontEnd\Mobile-FrontEnd.csproj">
+      <Project>{F675D6A4-6304-43AA-A703-D4B1D1B03D84}</Project>
+      <Name>Mobile-FrontEnd</Name>
     </ProjectReference>
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
