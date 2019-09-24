@@ -1,7 +1,189 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Mobile_FrontEnd.MainPage">
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:extension="clr-namespace:MobileFrontEnd.Components.Extension"
+    mc:Ignorable="d"
+    x:Class="Mobile_FrontEnd.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid BackgroundColor="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="65"/>
+        </Grid.RowDefinitions>
+        <AbsoluteLayout Grid.Row="0"
+              BackgroundColor="Transparent">
+            <Image Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Images.gai-xinh.png}"
+                       AbsoluteLayout.LayoutBounds=".2, .5, 1, .8"
+                        AbsoluteLayout.LayoutFlags="All"
+                       Aspect="AspectFit"/>
+            <StackLayout
+                AbsoluteLayout.LayoutBounds=".5, .05, 200, 25"
+                AbsoluteLayout.LayoutFlags="PositionProportional">
+                <Label FontSize="Large"
+                       FontAttributes="Bold">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Following" TextColor="Pink"/>
+                            <Span Text="    |   " TextColor="Pink"/>
+                            <Span Text="For You" TextColor="White"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+            <Grid
+                AbsoluteLayout.LayoutBounds="0, 1., 0.8, 0.25"
+                AbsoluteLayout.LayoutFlags="All">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="1"
+                             Padding="15">
+                    <Label Text="@Soái Nhi"
+                           FontAttributes="Bold"
+                           FontSize="Large"/>
+                    <Label Text="Rước đèn làm gi, rước em luôn đi"
+                           FontSize="Body"/>
+                    <Label Text="See translation"
+                           FontAttributes="Bold"
+                           TextColor="White"/>
+                    <StackLayout Orientation="Horizontal"
+                                 Margin="0, 5">
+                        <Image Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Icons.tiktok-vn.png}"/>
+                        <Label Text="Nơi này có anh - Sơn Tùng"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+            <Grid
+                AbsoluteLayout.LayoutBounds="1, 1., 0.3, 0.6"
+                AbsoluteLayout.LayoutFlags="All">
+                <Grid.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="StackLayout">
+                            <Setter Property="Padding" Value="8, 13"/>
+                            <Setter Property="VerticalOptions" Value="Center"/>
+                            <Setter Property="HorizontalOptions" Value="Center"/>
+                        </Style>
+                        <Style TargetType="Label">
+                            <Setter Property="FontSize" Value="Small"/>
+                            <Setter Property="TextColor" Value="White"/>
+                        </Style>
+                        <!--<Style TargetType="Frame">
+                            <Setter Property="Margin" Value="10, 15"/>
+                        </Style>-->
+                    </ResourceDictionary>
+                </Grid.Resources>
+            
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <StackLayout
+                             Grid.Row="1"
+                             Grid.Column="1">
+                    <StackLayout
+                             >
+                        <Frame
+                            HeightRequest="70"
+                            WidthRequest="70"
+                            Padding="0"
+                            CornerRadius="35">
+                            <Image Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Images.profile.png}"
+                                   HeightRequest="70"
+                                   WidthRequest="70"
+                                   Aspect="AspectFill"/>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout x:Name="HeartArea">
+                        <Image Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Icons.heart.png}"/>
+                        <Label Text="60.8K"/>
+                    </StackLayout>
+                    <StackLayout x:Name="CommentArea">
+                        <Image Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Icons.comment.png}"/>
+                        <Label Text="690"/>
+                    </StackLayout>
+                    <StackLayout x:Name="ShareArea">
+                        <Image Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Icons.share.png}"/>
+                        <Label Text="218"/>
+                    </StackLayout>
+                    <StackLayout
+                                 Margin="0, 20,0,0"
+                                 Padding="8,13,8,0">
+                        <Frame
+                            HeightRequest="70"
+                            WidthRequest="70"
+                            Padding="0"
+                            CornerRadius="35">
+                            <Image Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Images.singerProfile.png}"
+                                   HeightRequest="70"
+                                   WidthRequest="70"
+                                   Aspect="AspectFill"
+                                   />
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
+                
+            </Grid>
+        </AbsoluteLayout>
+        <Grid Grid.Row="1"
+              BackgroundColor="Transparent">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="StackLayout">
+                        <Setter Property="VerticalOptions" Value="Center"/>
+                        <Setter Property="HorizontalOptions" Value="Center"/>
+                    </Style>
+                    <Style TargetType="Label">
+                        <Setter Property="FontSize" Value="Small"/>
+                        <Setter Property="TextColor" Value="White"/>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0">
+                <Image Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Icons.home.png}"/>
+                <Label Text="Home"/>
+            </StackLayout>
+            <StackLayout Grid.Column="1">
+                <Image Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Icons.discover.png}"/>
+                <Label Text="Discover"/>
+            </StackLayout>
+            <StackLayout Grid.Column="2">
+                <Frame CornerRadius="10"
+                       Padding="25, 1">
+                    <Label Text="+" TextColor="Black"
+                           FontSize="35"
+                           FontAttributes="Bold"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout Grid.Column="3">
+                <Image Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Icons.notifications.png}"/>
+                <Label Text="Notifications"/>
+            </StackLayout>
+            <StackLayout Grid.Column="4">
+                <Image Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Icons.me.png}"/>
+                <Label Text="Me"/>
+            </StackLayout>
+        </Grid>
+    </Grid>
 </ContentPage>
