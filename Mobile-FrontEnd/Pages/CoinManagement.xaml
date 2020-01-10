@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:extension="clr-namespace:MobileFrontEnd.Components.Extension;assembly=Mobile-FrontEnd"
+    xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+    x:Class="MobileFrontEnd.Pages.CoinManagement"
+    Title="Coins">
+    <StackLayout BackgroundColor="White">
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                     Margin="50"
+                     BackgroundColor="Red">
+            <Label Text="Tong tien: 2 ty dong"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Images.star.png}"/>
+                <Image Grid.Column="1" Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Images.star.png}"/>
+                <Image Grid.Column="2" Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Images.star.png}"/>
+                <Image Grid.Column="3" Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Images.star.png}"/>
+                <Image Grid.Column="4" Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Images.star.png}"/>
+            </Grid>
+        </StackLayout>
+
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                     BackgroundColor="Red"
+                     >
+            <Label Text="Thong ke thu nhap"
+                    FontSize="Large"
+                   HorizontalTextAlignment="Center"/>
+            <microcharts:ChartView x:Name="chartViewEarn" />
+        </StackLayout>
+
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                     BackgroundColor="Red">
+            <Label Text="Donated"
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"/>
+            <microcharts:ChartView x:Name="chartViewDonate"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

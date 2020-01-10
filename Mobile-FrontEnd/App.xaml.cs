@@ -1,4 +1,5 @@
 ﻿using System;
+using MobileFrontEnd.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,6 +11,7 @@ namespace Mobile_FrontEnd
         {
             InitializeComponent();
 
+            // MainPage = new VideoPlayer();
             MainPage = new MainPage();
         }
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileFrontEnd.Pages.VideoPlayer"
+             xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms">
+    <ContentPage.Content>
+        <StackLayout>
+            <mm:VideoView VerticalOptions="FillAndExpand" Source="https://v16.tiktokcdn.com/48d9c6d32d0c9b3eaae423a3ac818dad/5dfa354f/video/n/v0102/4deb279c33c14f93a47c10bdcbf151ef/" ShowControls="False" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
