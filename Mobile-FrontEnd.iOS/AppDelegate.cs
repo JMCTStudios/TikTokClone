@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using ImageCircle.Forms.Plugin.iOS;
+using MediaManager;
 using UIKit;
 
 namespace Mobile_FrontEnd.iOS
@@ -22,11 +24,16 @@ namespace Mobile_FrontEnd.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Rg.Plugins.Popup.Popup.Init();
+            CrossMediaManager.Current.Init();
             Xamarin.Calabash.Start();
             global::Xamarin.Forms.Forms.Init();
+            ImageCircleRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
         }
+
+        
     }
 }
