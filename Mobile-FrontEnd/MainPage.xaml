@@ -37,7 +37,6 @@
                     <!-- <ClickGestureRecognizer NumberOfClicksRequired="2" Clicked="OnPauseAndPlayVideoClicked"/> -->
                 </StackLayout.GestureRecognizers>
                 <mm:VideoView
-                    Source="https://stream-video-data.herokuapp.com/video_streams/4d8621b4f7a396d65ffcbe8b8ceeb22c"
                     VerticalOptions="FillAndExpand"
                     AutoPlay="True"
                     Repeat="One"

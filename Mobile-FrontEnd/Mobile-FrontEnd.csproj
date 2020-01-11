@@ -80,5 +80,9 @@
     <EmbeddedResource Include="Resources\Musics\my_music.mp3" />
     <EmbeddedResource Include="Resources\Videos\tiktok_video_1.mp4" />
     <EmbeddedResource Include="Resources\Icons\play-arrow.png" />
+    <None Remove="Resources\Icons\music.png" />
+    <EmbeddedResource Include="Resources\Icons\music.png" />
+    <None Remove="Resources\Icons\video_upload.png" />
+    <EmbeddedResource Include="Resources\Icons\video_upload.png" />
   </ItemGroup>
 </Project>

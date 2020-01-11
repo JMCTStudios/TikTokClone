@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using MediaManager;
 using MediaManager.Player;
 using Mobile_FrontEnd.Models;
+using Mobile_FrontEnd.Pages;
 using MobileFrontEnd.Pages;
 using MobileFrontEnd.Pages.Popup;
 using Plugin.FileUploader;
@@ -25,12 +26,23 @@ namespace Mobile_FrontEnd
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        private string currenVideoUrl { get; set; }
+        private string CurrentVideoUrl { get; set; }
         public MainPage()
         {
             InitializeComponent();
-            this.currenVideoUrl =
+            this.CurrentVideoUrl =
                 "https://stream-video-data.herokuapp.com/video_streams/4d8621b4f7a396d65ffcbe8b8ceeb22c";
+            CrossMediaManager.Current.Play(this.CurrentVideoUrl);
+        }
+
+        public MainPage(string VideoUrl)
+        {
+            InitializeComponent();
+            if (VideoUrl != null)
+            {
+                this.CurrentVideoUrl = VideoUrl;
+                CrossMediaManager.Current.Play(this.CurrentVideoUrl);
+            }
         }
         
         public IList<string> Mp4UrlList => new[]{
@@ -39,11 +51,11 @@ namespace Mobile_FrontEnd
 
         void playVideoMedia()
         {
-            CrossMediaManager.Current.Play(currenVideoUrl);
+            CrossMediaManager.Current.Play(CurrentVideoUrl);
             // CrossMediaManager.Current.Play();
         }
 
-        async void OnPauseAndPlayVideoClicked(object sender, EventArgs args)
+        private async void OnPauseAndPlayVideoClicked(object sender, EventArgs args)
         {
             switch (CrossMediaManager.Current.State)
             {
@@ -57,7 +69,7 @@ namespace Mobile_FrontEnd
                 //     await CrossMediaManager.Current.Play(Mp4UrlList);
                 //     break;
                 default:
-                    await CrossMediaManager.Current.Play(currenVideoUrl);
+                    await CrossMediaManager.Current.Play(CurrentVideoUrl);
                     break;
             }
 
@@ -86,11 +98,12 @@ namespace Mobile_FrontEnd
         void OnMeTapGestureRecognizerTapped(object sender, EventArgs args)
         {
             //await Navigation.PushPopupAsync(new PersionalPopup());
-            Navigation.PushAsync(new CoinManagement());
+            Navigation.PushModalAsync(new CoinManagement());
         }
 
         private async void OnTakeCameraClicked(object sender, EventArgs e)
         {
+            await CrossMediaManager.Current.Pause();
             await CrossMedia.Current.Initialize();
     
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
@@ -99,20 +112,22 @@ namespace Mobile_FrontEnd
                 return;
             }
 
-            // var file = await CrossMedia.Current.TakeVideoAsync(new Plugin.Media.Abstractions.StoreVideoOptions()
-            // {
-            //     Directory = "Videos",
-            //     Name = "test.mp4"
-            // });
-            var file = await CrossMedia.Current.PickVideoAsync();
+            var file = await CrossMedia.Current.TakeVideoAsync(new Plugin.Media.Abstractions.StoreVideoOptions()
+            {
+                Directory = "Videos Upload",
+                Name = "test.mp4"
+            });
 
             if (file == null)
+            {
+                await CrossMediaManager.Current.Play();
                 return;
+            }
 
             var fileInfoResponse = await CrossFileUploader.Current.UploadFileAsync(
-                "https://stream-video-data.herokuapp.com/video_streams/upload", 
-                    new FilePathItem("file", file.Path)
-                );
+            "https://stream-video-data.herokuapp.com/video_streams/upload", 
+                new FilePathItem("file", file.Path)
+            );
             file.Dispose();
             var fileUrl = Deserialize(fileInfoResponse.Message).fileUrl;
             await DisplayAlert("File Url: ", fileUrl, "OK");
@@ -121,7 +136,8 @@ namespace Mobile_FrontEnd
                 await CrossMediaManager.Current.Stop();
                 await CrossMediaManager.Current.Play(fileUrl);
                 // Set current file url
-                this.currenVideoUrl = fileUrl;
+                this.CurrentVideoUrl = fileUrl;
+                await Navigation.PushModalAsync(new PrePostVideo(this.CurrentVideoUrl));
             }
         }
 

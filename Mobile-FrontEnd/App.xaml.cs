@@ -1,4 +1,5 @@
 ﻿using System;
+using Mobile_FrontEnd.Pages;
 using MobileFrontEnd.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,8 +12,8 @@ namespace Mobile_FrontEnd
         {
             InitializeComponent();
 
-            // MainPage = new VideoPlayer();
             MainPage = new MainPage();
+            // MainPage = new PrePostVideo();
         }
 
         protected override void OnStart()
