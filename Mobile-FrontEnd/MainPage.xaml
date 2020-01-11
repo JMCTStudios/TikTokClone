@@ -40,7 +40,7 @@
                     VerticalOptions="FillAndExpand"
                     AutoPlay="True"
                     Repeat="One"
-                   />
+                />
             </StackLayout>
             <StackLayout
                 AbsoluteLayout.LayoutBounds=".5, .05, 200, 25"

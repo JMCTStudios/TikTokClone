@@ -13,7 +13,7 @@ namespace Mobile_FrontEnd
             InitializeComponent();
 
             MainPage = new MainPage();
-            // MainPage = new PrePostVideo();
+            // MainPage = new PostVideo();
         }
 
         protected override void OnStart()

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="Bold" enable-background="new 0 0 24 24" height="512px" viewBox="0 0 24 24" width="512px" data-ember-extension="1"><g transform="matrix(0.809728 0 0 0.809728 2.28326 2.28326)"><script xmlns="" id="ember-inspector-boot-42997195" class="active-path" style="">
+  window.EmberENV = { _DEBUG_RENDER_TREE: true };
+  document.getElementById("ember-inspector-boot-42997195").remove();
+</script><path d="m0 11.111c0 3.496 1.744 6.615 4.471 8.652v4.237l4.086-2.242c1.09.301 2.245.465 3.442.465 6.627 0 12-4.974 12-11.111.001-6.137-5.372-11.112-11.999-11.112s-12 4.974-12 11.111zm10.734-3.112 3.13 3.259 5.887-3.259-6.56 6.962-3.055-3.258-5.963 3.259z" data-original="#000000" class="active-path" fill="#9C9C9C"/></g> </svg>

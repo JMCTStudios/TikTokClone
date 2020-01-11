@@ -38,11 +38,12 @@ namespace Mobile_FrontEnd.Pages
         {
             await CrossMediaManager.Current.Stop();
             
-            Application.Current.MainPage = new MainPage(this.CurrentVideoUrl);
-            foreach (var page in Navigation.ModalStack)
-            {
-                Navigation.RemovePage(page);
-            }
+            // Application.Current.MainPage = new MainPage(this.CurrentVideoUrl);
+            // foreach (var page in Navigation.ModalStack)
+            // {
+            //     Navigation.RemovePage(page);
+            // }
+            await Navigation.PushModalAsync(new PostVideo(this.CurrentVideoUrl));
         }
 
         private async void OnUploadVideoTapped(object sender, EventArgs e)

@@ -28,6 +28,7 @@
     <Folder Include="Resources\" />
     <Folder Include="Components\" />
     <Folder Include="Components\Extension\" />
+    <Folder Include="Resources\Converters" />
     <Folder Include="Resources\Images\" />
     <Folder Include="Pages\" />
   </ItemGroup>
@@ -84,5 +85,19 @@
     <EmbeddedResource Include="Resources\Icons\music.png" />
     <None Remove="Resources\Icons\video_upload.png" />
     <EmbeddedResource Include="Resources\Icons\video_upload.png" />
+    <None Remove="Resources\Icons\messenger.png" />
+    <EmbeddedResource Include="Resources\Icons\messenger.png" />
+    <None Remove="Resources\Icons\fb.png" />
+    <EmbeddedResource Include="Resources\Icons\fb.png" />
+    <None Remove="Resources\Icons\zalo.png" />
+    <EmbeddedResource Include="Resources\Icons\zalo.png" />
+    <None Remove="Resources\Icons\back.png" />
+    <EmbeddedResource Include="Resources\Icons\back.png" />
+    <None Remove="Resources\Icons\image_upload.png" />
+    <EmbeddedResource Include="Resources\Icons\image_upload.png" />
+    <None Remove="Resources\Icons\post.png" />
+    <EmbeddedResource Include="Resources\Icons\post.png" />
+    <None Remove="Resources\Icons\draft.png" />
+    <EmbeddedResource Include="Resources\Icons\draft.png" />
   </ItemGroup>
 </Project>
