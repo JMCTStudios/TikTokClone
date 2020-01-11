@@ -4931,6 +4931,7 @@ namespace Mobile_FrontEnd.Droid
 			global::MediaManager.Forms.Resource.Styleable.View_paddingStart = global::Mobile_FrontEnd.Droid.Resource.Styleable.View_paddingStart;
 			global::MediaManager.Forms.Resource.Styleable.View_theme = global::Mobile_FrontEnd.Droid.Resource.Styleable.View_theme;
 			global::Microcharts.Droid.Resource.String.library_name = global::Mobile_FrontEnd.Droid.Resource.String.library_name;
+			global::ModernHttpClient.Resource.String.library_name = global::Mobile_FrontEnd.Droid.Resource.String.library_name;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::Mobile_FrontEnd.Droid.Resource.Attribute.alpha;
 			global::Xamarin.Essentials.Resource.Attribute.coordinatorLayoutStyle = global::Mobile_FrontEnd.Droid.Resource.Attribute.coordinatorLayoutStyle;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::Mobile_FrontEnd.Droid.Resource.Attribute.font;
@@ -17907,7 +17908,10 @@ namespace Mobile_FrontEnd.Droid
 		{
 			
 			// aapt resource value: 0x7F100000
-			public const int xamarin_essentials_fileprovider_file_paths = 2131755008;
+			public const int file_paths = 2131755008;
+			
+			// aapt resource value: 0x7F100001
+			public const int xamarin_essentials_fileprovider_file_paths = 2131755009;
 			
 			static Xml()
 			{

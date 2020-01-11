@@ -33,9 +33,11 @@
                          d:BackgroundColor="Blue"
                          >
                 <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="OnTappedPauseAndPlayVideo"/>
+                    <TapGestureRecognizer Tapped="OnPauseAndPlayVideoClicked" NumberOfTapsRequired="2"/>
+                    <!-- <ClickGestureRecognizer NumberOfClicksRequired="2" Clicked="OnPauseAndPlayVideoClicked"/> -->
                 </StackLayout.GestureRecognizers>
                 <mm:VideoView
+                    Source="https://stream-video-data.herokuapp.com/video_streams/4d8621b4f7a396d65ffcbe8b8ceeb22c"
                     VerticalOptions="FillAndExpand"
                     AutoPlay="True"
                     Repeat="One"
@@ -226,6 +228,10 @@
                 <Label Text="Discover"/>
             </StackLayout>
             <StackLayout Grid.Column="2">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTakeCameraClicked"/>
+                    <!-- <ClickGestureRecognizer Clicked="OnTakeCameraClicked"/> -->
+                </StackLayout.GestureRecognizers>
                 <Frame CornerRadius="10"
                        Padding="25, 1">
                     <Label Text="+" TextColor="Black"
