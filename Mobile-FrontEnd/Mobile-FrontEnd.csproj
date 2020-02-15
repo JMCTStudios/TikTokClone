@@ -10,7 +10,71 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+    <PackageReference Include="SkiaSharp" Version="1.59.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.2.0.223" />
+    <PackageReference Include="Microcharts.Forms" Version="0.7.1" />
+    <PackageReference Include="Microcharts" Version="0.7.1" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
+    <PackageReference Include="Plugin.MediaManager.Forms" Version="0.9.1" />
+    <PackageReference Include="Plugin.MediaManager" Version="0.9.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Components\" />
+    <Folder Include="Components\Extension\" />
+    <Folder Include="Resources\Images\" />
+    <Folder Include="Pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\Icons\home.png" />
+    <None Remove="Resources\Icons\home.svg" />
+    <None Remove="Resources\Icons\discovery.png" />
+    <None Remove="Resources\Icons\discovery.svg" />
+    <None Remove="Resources\Icons\me.png" />
+    <None Remove="Resources\Icons\me.svg" />
+    <None Remove="Resources\Icons\notifications.png" />
+    <None Remove="Resources\Icons\notifications.svg" />
+    <None Remove="Resources\Icons\tiktok-vn.png" />
+    <None Remove="Resources\Icons\tiktok-vn.svg" />
+    <None Remove="Resources\Images\gai-xinh.png" />
+    <None Remove="Resources\Icons\share.png" />
+    <None Remove="Resources\Icons\share.svg" />
+    <None Remove="Resources\Icons\comment.png" />
+    <None Remove="Resources\Icons\heart.png" />
+    <None Remove="Resources\Icons\comment.svg" />
+    <None Remove="Resources\Icons\heart.svg" />
+    <None Remove="Resources\Images\profile.png" />
+    <None Remove="Resources\Images\singerProfile.png" />
+    <None Remove="Resources\Icons\star.png" />
+    <None Remove="Resources\Videos\tiktok_video_1.mp4" />
+    <None Remove="Resources\Icons\play-arrow.png" />
+    <None Remove="Resources\Videos\my_music.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\home.png" />
+    <EmbeddedResource Include="Resources\Icons\home.svg" />
+    <EmbeddedResource Include="Resources\Icons\discover.png" />
+    <EmbeddedResource Include="Resources\Icons\discover.svg" />
+    <EmbeddedResource Include="Resources\Icons\me.png" />
+    <EmbeddedResource Include="Resources\Icons\me.svg" />
+    <EmbeddedResource Include="Resources\Icons\notifications.png" />
+    <EmbeddedResource Include="Resources\Icons\notifications.svg" />
+    <EmbeddedResource Include="Resources\Icons\tiktok-vn.png" />
+    <EmbeddedResource Include="Resources\Icons\tiktok-vn.svg" />
+    <EmbeddedResource Include="Resources\Images\gai-xinh.png" />
+    <EmbeddedResource Include="Resources\Icons\share.png" />
+    <EmbeddedResource Include="Resources\Icons\share.svg" />
+    <EmbeddedResource Include="Resources\Icons\comment.png" />
+    <EmbeddedResource Include="Resources\Icons\heart.png" />
+    <EmbeddedResource Include="Resources\Icons\comment.svg" />
+    <EmbeddedResource Include="Resources\Icons\heart.svg" />
+    <EmbeddedResource Include="Resources\Images\profile.png" />
+    <EmbeddedResource Include="Resources\Images\singerProfile.png" />
+    <EmbeddedResource Include="Resources\Icons\star.png" />
+    <EmbeddedResource Include="Resources\Musics\my_music.mp3" />
+    <EmbeddedResource Include="Resources\Videos\tiktok_video_1.mp4" />
+    <EmbeddedResource Include="Resources\Icons\play-arrow.png" />
   </ItemGroup>
 </Project>

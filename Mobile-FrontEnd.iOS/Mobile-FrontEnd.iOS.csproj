@@ -120,15 +120,33 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />
+    <PackageReference Include="Plugin.MediaManager.Forms">
+      <Version>0.9.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
     <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.7" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>1.2.0.223</Version>
+    </PackageReference>
+    <PackageReference Include="Microcharts.Forms">
+      <Version>0.7.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microcharts">
+      <Version>0.7.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle">
+      <Version>3.0.0.5</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Mobile_FrontEnd\Mobile_FrontEnd.csproj">
-      <Project>{F299ECDC-743D-4A6C-8BB5-ACCC530482A3}</Project>
-      <Name>Mobile_FrontEnd</Name>
+    <ProjectReference Include="..\Mobile-FrontEnd\Mobile-FrontEnd.csproj">
+      <Project>{F675D6A4-6304-43AA-A703-D4B1D1B03D84}</Project>
+      <Name>Mobile-FrontEnd</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\videos\tiktok-video-1.mp4" />
   </ItemGroup>
 </Project>
