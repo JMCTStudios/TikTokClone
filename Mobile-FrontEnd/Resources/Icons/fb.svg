@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" data-ember-extension="1" width="512px" height="512px"><g transform="matrix(0.817907 0 0 0.817907 46.6158 46.6158)"><script xmlns="" id="ember-inspector-boot-4087585" class="active-path" style="">
+  window.EmberENV = { _DEBUG_RENDER_TREE: true };
+  document.getElementById("ember-inspector-boot-4087585").remove();
+</script><g>
+	<g>
+		<path d="M288,176v-64c0-17.664,14.336-32,32-32h32V0h-64c-53.024,0-96,42.976-96,96v80h-64v80h64v256h96V256h64l32-80H288z" data-original="#000000" class="active-path" fill="#A6A6A6"/>
+	</g>
+</g></g> </svg>

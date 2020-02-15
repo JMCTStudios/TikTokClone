@@ -121,7 +121,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Plugin.MediaManager.Forms">
-      <Version>0.9.1</Version>
+      <Version>0.9.4</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>4.0.1.5</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
     <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.7" />

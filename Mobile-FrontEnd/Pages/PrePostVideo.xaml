@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
+             xmlns:extension="clr-namespace:MobileFrontEnd.Components.Extension;assembly=Mobile-FrontEnd"
+             x:Class="Mobile_FrontEnd.Pages.PrePostVideo"
+             BackgroundColor="Black">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Image">
+                <Setter Property="WidthRequest" Value="35"/>
+                <Setter Property="HeightRequest" Value="35"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <mm:VideoView
+                Grid.Row="0"
+                VerticalOptions="FillAndExpand"
+                AutoPlay="True"
+                Repeat="One"
+            >
+                <mm:VideoView.GestureRecognizers>
+                    <TapGestureRecognizer 
+                        NumberOfTapsRequired="2"
+                        Tapped="OnPauseAndPlayVideoTapped"/>
+                </mm:VideoView.GestureRecognizers>
+            </mm:VideoView>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0"
+                             HorizontalOptions="Start"
+                             VerticalOptions="Center"
+                             Margin="10,0,0,0"
+                             Orientation="Horizontal">
+                    <StackLayout.Resources>
+                        <ResourceDictionary>
+                            <Style TargetType="Label">
+                                <Setter Property="FontSize" Value="Small"/>
+                                <Setter Property="TextColor" Value="White"/>
+                            </Style>
+                        </ResourceDictionary>
+                    </StackLayout.Resources>
+                    <StackLayout>
+                        <Image Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Icons.music.png}"/>
+                        <Label Text="Sounds"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnUploadVideoTapped"/>
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Icons.video_upload.png}"/>
+                        <Label Text="Upload Video" TextColor="White"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Grid.Column="1"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Margin="0, 0, 5, 0">
+                    <Button
+                        BackgroundColor="Red"
+                        Text="Next"
+                        TextColor="White"
+                        Clicked="OnNextButtonClicked"/>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

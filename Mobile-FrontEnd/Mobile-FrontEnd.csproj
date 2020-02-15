@@ -10,20 +10,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SkiaSharp" Version="1.59.1" />
+    <PackageReference Include="Plugin.FileUploader" Version="1.4.0" />
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
+    <PackageReference Include="SkiaSharp" Version="1.68.1.1" />
+    <PackageReference Include="System.Text.Json" Version="4.7.0" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
     <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.2.0.223" />
     <PackageReference Include="Microcharts.Forms" Version="0.7.1" />
     <PackageReference Include="Microcharts" Version="0.7.1" />
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
-    <PackageReference Include="Plugin.MediaManager.Forms" Version="0.9.1" />
-    <PackageReference Include="Plugin.MediaManager" Version="0.9.1" />
+    <PackageReference Include="Plugin.MediaManager.Forms" Version="0.9.4" />
+    <PackageReference Include="Plugin.MediaManager" Version="0.9.4" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Components\" />
     <Folder Include="Components\Extension\" />
+    <Folder Include="Resources\Converters" />
     <Folder Include="Resources\Images\" />
     <Folder Include="Pages\" />
   </ItemGroup>
@@ -76,5 +81,23 @@
     <EmbeddedResource Include="Resources\Musics\my_music.mp3" />
     <EmbeddedResource Include="Resources\Videos\tiktok_video_1.mp4" />
     <EmbeddedResource Include="Resources\Icons\play-arrow.png" />
+    <None Remove="Resources\Icons\music.png" />
+    <EmbeddedResource Include="Resources\Icons\music.png" />
+    <None Remove="Resources\Icons\video_upload.png" />
+    <EmbeddedResource Include="Resources\Icons\video_upload.png" />
+    <None Remove="Resources\Icons\messenger.png" />
+    <EmbeddedResource Include="Resources\Icons\messenger.png" />
+    <None Remove="Resources\Icons\fb.png" />
+    <EmbeddedResource Include="Resources\Icons\fb.png" />
+    <None Remove="Resources\Icons\zalo.png" />
+    <EmbeddedResource Include="Resources\Icons\zalo.png" />
+    <None Remove="Resources\Icons\back.png" />
+    <EmbeddedResource Include="Resources\Icons\back.png" />
+    <None Remove="Resources\Icons\image_upload.png" />
+    <EmbeddedResource Include="Resources\Icons\image_upload.png" />
+    <None Remove="Resources\Icons\post.png" />
+    <EmbeddedResource Include="Resources\Icons\post.png" />
+    <None Remove="Resources\Icons\draft.png" />
+    <EmbeddedResource Include="Resources\Icons\draft.png" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extension="clr-namespace:MobileFrontEnd.Components.Extension;assembly=Mobile-FrontEnd"
+             xmlns:converter="clr-namespace:MobileFrontEnd.Components.Converter;assembly=Mobile-FrontEnd"
+             xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="Mobile_FrontEnd.Pages.PostVideo"
+             Padding="5, 0">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:ImageSourceConverter x:Key="ImageSourceResource"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" x:Name="Header"
+                        VerticalOptions="Start"
+                         Orientation="Horizontal"
+                         HorizontalOptions="CenterAndExpand"
+                         BackgroundColor="Transparent">
+                <!-- <Image Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Icons.back.png}" -->
+                <!--        HeightRequest="30" -->
+                <!--        WidthRequest="30"/> -->
+                <Label Text="Post"
+                       FontSize="Large"/>
+            </StackLayout>
+            <Grid Grid.Row="1" x:Name="Content">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image x:Name="SelectedImage" 
+                       BackgroundColor="Black"
+                        Grid.Column="1" Grid.RowSpan="2"
+                       HeightRequest="150" WidthRequest="100"
+                       Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Icons.image_upload.png}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSelectImageTapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Editor Grid.Column="0" Grid.Row="0"
+                       Placeholder="Describe your video"
+                       PlaceholderColor="Gray">
+                    
+                </Editor>
+                <StackLayout Grid.Column="0" Grid.Row="1"
+                             VerticalOptions="Center"
+                             Orientation="Horizontal"
+                             HeightRequest="35">
+                    <StackLayout.Resources>
+                        <ResourceDictionary>
+                            <Style TargetType="Button">
+                                <Setter Property="BackgroundColor" Value="White"/>
+                                <Setter Property="BorderColor" Value="Gray"/>
+                                <Setter Property="HeightRequest" Value="30"/>
+                                <Setter Property="FontSize" Value="Small"/>
+                            </Style>
+                        </ResourceDictionary>
+                    </StackLayout.Resources>
+                    <Button x:Name="TagHash" Text="#HashTags"/>
+                    <Button x:Name="TagFriend" Text="@Friends"/>
+                </StackLayout>
+            </Grid>
+            <ListView Grid.Row="2" x:Name="SettingListView"
+                      >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout x:Name="Icon" Grid.Column="0">
+                                <Image Source="{Binding IconPath, Converter={StaticResource ImageSourceResource}}"/>
+                            </StackLayout>
+                            <StackLayout x:Name="Content" Grid.Column="1">
+                                <Label Text="{Binding Content}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            </StackLayout>
+                            <StackLayout x:Name="Controls" Grid.Column="2"
+                                         Orientation="Horizontal">
+                                <Label Text="Public" IsVisible="{Binding HasText}"/>
+                                <Image Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Icons.right_arrow.png}" IsVisible="{Binding HasIcon}"/>
+                                <Switch IsVisible="{Binding HasSwitch}" BackgroundColor="LimeGreen"/>
+                            </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Grid.Row="3" x:Name="Share"
+                         Padding="5, 0,0,0">
+                <Label Text="Share posted video to" TextColor="Gray"/>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout.Resources>
+                        <ResourceDictionary>
+                            <Style TargetType="abstractions:CircleImage">
+                                <Setter Property="HeightRequest" Value="45"/>
+                                <Setter Property="WidthRequest" Value="45"/>
+                                <Setter Property="Aspect" Value="AspectFill"/>
+                                <Setter Property="Margin" Value="3"/>
+                            </Style>
+                        </ResourceDictionary>
+                    </StackLayout.Resources>
+                    <abstractions:CircleImage
+                        Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Icons.fb.png}"
+                        />
+                    <abstractions:CircleImage
+                        Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Icons.zalo.png}"
+                        />
+                    <abstractions:CircleImage
+                        Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Images.messenger.png}"
+                        />
+                    
+                </StackLayout>
+            </StackLayout>
+            <Grid Grid.Row="4" x:Name="Confirm"
+                  Margin="5">
+                <Grid.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="Image">
+                            <Setter Property="HeightRequest" Value="25"/>
+                            <Setter Property="WidthRequest" Value="25"/>
+                        </Style>
+                        <Style TargetType="Frame">
+                            <Setter Property="Padding" Value="0, 0, 0, 0"/>
+                            <Setter Property="HorizontalOptions" Value="Center"/>
+                            <Setter Property="VerticalOptions" Value="Center"/>
+                            <Setter Property="HeightRequest" Value="50"/>
+                            <Setter Property="WidthRequest" Value="150"/>
+                            <Setter Property="BorderColor" Value="Gray"/>
+                            <Setter Property="Margin" Value="5, 0"></Setter>
+                        </Style>
+                        <Style TargetType="StackLayout">
+                            <Setter Property="Orientation" Value="Horizontal"/>
+                            <Setter Property="HorizontalOptions" Value="Center"/>
+                            <Setter Property="VerticalOptions" Value="Center"/>
+                            <Setter Property="Padding" Value="3, 0"/>
+                        </Style>
+                        <Style TargetType="Label">
+                            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                            <Setter Property="VerticalTextAlignment" Value="Center"/>
+                        </Style>
+                    </ResourceDictionary>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Frame x:Name="Draft" Grid.Column="0"
+                        BackgroundColor="White">
+                    <StackLayout >
+                        <Image Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Icons.draft.png}"/>
+                        <Label Text="Draft"/>
+                    </StackLayout>
+                </Frame>
+                <Frame x:Name="Post" Grid.Column="1"
+                        BackgroundColor="Red">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnPostButtonClicked"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <Image Source="{extension:ImageResource Source=Mobile-FrontEnd.Resources.Icons.post.png}"/>
+                        <Label Text="Post"/>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
